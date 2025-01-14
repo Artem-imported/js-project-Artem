@@ -69,4 +69,3 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("maxRes").textContent = `Найбільше число: ${max}`;
     });
 });
-
