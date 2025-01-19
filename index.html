@@ -12,10 +12,10 @@
             <img src="./images/logo.png" alt="logo">
             <div class="header__container--content">
                 <select class="header__container--select" id="size" name="size">
-                    <option selected>Інтерактив</option>
-                    <option>Числовий</option>
-                    <option>Ігровий</option>
-                    <option>Ознайомчий</option>
+                    <option class="header__container--select__option" selected>Інтерактив</option>
+                    <option class="header__container--select__option">Числовий</option>
+                    <option class="header__container--select__option">Ігровий</option>
+                    <option class="header__container--select__option">Ознайомчий</option>
                 </select>
                 <a class="header__container--link" href="">Наша команда</a>
                 <a class="header__container--link" href="">Контакти</a>
@@ -26,35 +26,35 @@
             <p class="header__content--text">Вітаємо, User!</p>
         </div>
     </header>
-    <main>
-        <div>
-            <h3>1. Перевір свій рік народження</h3>
+    <main class="main">
+        <h1 class="main__title">Популярні інетрактивні ігри</h1>
+        <hr>
+        <div class="main__bYear">
+            <h3 class="main__block--title">Перевір свій рік народження</h3>
             <label for="bYear">Рік народження:</label>
             <input type="number" id="bYear">
             <button id="submitBYear">Перевірити</button>
             <p id="bYearRes"></p>
         </div>
-
         <hr>
-
-        <div>
-            <h3>2. Вгадай число (від 1 до 10)</h3>
+        <div class="main__rand">
+            <h3 class="main__block--title">Вгадай число (від 1 до 10)</h3>
             <label for="randNum">Введи число:</label>
             <input type="number" id="randNum" min="1" max="10">
             <button id="subRand">Вгадати</button>
             <p id="randRes"></p>
         </div>
-
-        <div>
-            <h3>3. Камінь - Ножиці - Папір</h3>
+        <hr>
+        <div class="main__rps">
+            <h3 class="main__block--title">Камінь - Ножиці - Папір</h3>
             <button class="selectBtn" data-choice="Камінь">Камінь</button>
             <button class="selectBtn" data-choice="Ножиці">Ножиці</button>
             <button class="selectBtn" data-choice="Папір">Папір</button>
             <p id="rpsRes"></p>
         </div>
-
-        <div>
-            <h3>4. Калькулятор</h3>
+        <hr>
+        <div class="main__calc">
+            <h3 class="main__block--title">Калькулятор</h3>
             <input type="number" id="num1" placeholder="Число 1">
             <input type="number" id="num2" placeholder="Число 2">
             <div>
@@ -66,14 +66,14 @@
             </div>
             <p id="calcRes"></p>
         </div>
-
-        <div>
-            <h3>5. Калькулятор часу</h3>
+        <hr>
+        <div class="main__time">
+            <h3 class="main__block--title">Калькулятор часу</h3>
             
         </div>
-
-        <div>
-            <h3>6. Найбільше число (з 3)</h3>
+        <hr>
+        <div class="main__max">
+            <h3 class="main__block--title">Найбільше число (з 3)</h3>
             <input type="number" id="numA" placeholder="Число 1">
             <input type="number" id="numB" placeholder="Число 2">
             <input type="number" id="numC" placeholder="Число 3">
