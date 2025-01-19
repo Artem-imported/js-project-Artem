@@ -7,18 +7,19 @@
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-    <header>
-        <img src="./images/logo.png" alt="logo">
+    <header class="header">
         <div class="header__container">
-            <label for="size">Size</label>
-            <select id="size" name="size">
-                <option selected>Інтерактив</option>
-                <option>Числовий</option>
-                <option>Ігровий</option>
-                <option>Ознайомчий</option>
-            </select>
-            <a class="header__container--link" href=""></a>
-            <a class="header__container--link" href=""></a>
+            <img src="./images/logo.png" alt="logo">
+            <div class="header__container--content">
+                <select class="header__container--select" id="size" name="size">
+                    <option selected>Інтерактив</option>
+                    <option>Числовий</option>
+                    <option>Ігровий</option>
+                    <option>Ознайомчий</option>
+                </select>
+                <a class="header__container--link" href="">Наша команда</a>
+                <a class="header__container--link" href="">Контакти</a>
+            </div>
         </div>
         <div class="header__content">
             <img src="./images/light-theme.png" alt="switch theme">
