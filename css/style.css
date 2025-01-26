@@ -73,6 +73,7 @@ hr {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: lightgray;
 }
 .main__title {
   font-family: Montserrat Alternates;
@@ -89,4 +90,26 @@ hr {
   font-size: 16px;
   font-weight: 400;
   margin-bottom: 36px;
+}
+.main__bYear--container {
+  display: flex;
+}
+.main__bYear--container--btn {
+  width: 100%;
+  max-width: 35px;
+  height: 35px;
+  padding: 10px 0px 0px 0px;
+  border-radius: 0px 20px 20px 0px;
+  background: #000000;
+  box-shadow: 3px 3px 0px 0px rgba(0, 0, 0, 0.2509803922);
+}
+.main__bYear--container--input {
+  width: 230px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  opacity: 0px;
+  box-shadow: 3px 3px 0px 0px rgba(0, 0, 0, 0.2509803922);
+  background-color: #D7D7D7;
+  border: none;
+  padding: 10px;
 }
