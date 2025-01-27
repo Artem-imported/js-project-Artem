@@ -7,6 +7,27 @@
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
+    <div class="modal modal--welcome">
+        <div class="modal__content">
+            <button class="modal__close-btn close-welcome">&times;</button>
+            <p class="modal__text modal__text--greeting">
+                Привіт!<br>Ви потрапили на сайт інтерактивних ігор та завдань<br>
+                Сподіваємось, що вам сподобається і ви отримаєте позитивні емоції!<br>
+                Бажаємо Вам гарно провести час!
+            </p>
+            <form class="modal__form" id="name-form">
+                <label class="modal__label" for="name-input">Введіть своє ім’я:</label>
+                <input class="modal__input" type="text" id="name-input" placeholder="Ваше ім’я..." required>
+                <button class="modal__submit-btn" id="inputButton" type="submit">Зберегти</button>
+            </form>
+        </div>
+    </div>
+    <div class="modal modal--thankU modal--hidden">
+        <div class="modal__content">
+            <button class="modal__close-btn close-thankU">&times;</button>
+            <p class="modal__text modal__text--thankU">Дякую за підписку!</p>
+        </div>
+    </div>
     <header class="header">
         <div class="header__container">
             <img src="./images/logo.png" alt="logo">
@@ -27,61 +48,100 @@
         </div>
     </header>
     <main class="main">
-        <h1 class="main__title">Популярні інетрактивні ігри</h1>
-        <hr>
-        <div class="main__bYear">
-            <h3 class="main__block--title">Перевір в який рік ти народився</h3>
-            <div class="main__bYear--container">
-                <input placeholder="Введіть рік народження" type="text" id="bYear" class="main__bYear--container--input">
-                <button class="main__bYear--container--btn" id="submitBYear"></button>
-                <p id="main__bYear--container--bYearRes"></p>
+        <section class="main__section">
+            <h1 class="main__title">Популярні інетрактивні ігри</h1>
+            <hr>
+            <div class="main__bYear">
+                <h3 class="main__block--title">Перевір в який рік ти народився</h3>
+                <div class="main__bYear--container">
+                    <div class="main__bYear--container--content">
+                        <input placeholder="Введіть рік народження" type="text" id="bYear" class="main__bYear--container--input input">
+                        <button class="main__bYear--container--btn" id="submitBYear">
+                            <svg class="main__bYear--container--svg" id="searchIcon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="6.52174" cy="6.52174" r="5.52174" stroke="white" stroke-width="2"></circle>
+                                <path d="M14.2929 15.7071C14.6834 16.0976 15.3166 16.0976 15.7071 15.7071C16.0976 15.3166 16.0976 14.6834 15.7071 14.2929L14.2929 15.7071ZM11.468 10.0538L10.7609 9.34665L9.34666 10.7609L10.0538 11.468L11.468 10.0538ZM15.7071 14.2929L11.468 10.0538L10.0538 11.468L14.2929 15.7071L15.7071 14.2929Z" fill="white"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <p style="white-space: nowrap;" class="main__bYear--container--res" id="bYearRes"></p>
+                </div>
             </div>
-        </div>
-        <hr>
-        <div class="main__rand">
-            <h3 class="main__block--title">Вгадай число, яке загадав комп’ютер (від 1 до 10)</h3>
-            <label for="randNum">Введи число:</label>
-            <input type="number" id="randNum" min="1" max="10">
-            <button id="subRand">Вгадати</button>
-            <p id="randRes"></p>
-        </div>
-        <hr>
-        <div class="main__rps">
-            <h3 class="main__block--title">Камінь - Ножиці - Папір</h3>
-            <button class="selectBtn" data-choice="Камінь">Камінь</button>
-            <button class="selectBtn" data-choice="Ножиці">Ножиці</button>
-            <button class="selectBtn" data-choice="Папір">Папір</button>
-            <p id="rpsRes"></p>
-        </div>
-        <hr>
-        <div class="main__calc">
-            <h3 class="main__block--title">Калькулятор</h3>
-            <input type="number" id="num1" placeholder="Число 1">
-            <input type="number" id="num2" placeholder="Число 2">
-            <div>
-                <button class="calc-button" data-operation="+">+</button>
-                <button class="calc-button" data-operation="-">-</button>
-                <button class="calc-button" data-operation="*">*</button>
-                <button class="calc-button" data-operation="/">/</button>
-                <button id="equals">=</button>
+            <hr>
+            <div class="main__rand">
+                <h3 class="main__block--title">Вгадай число, яке загадав комп’ютер (від 1 до 10)</h3>
+                <div class="main__rand--container">
+                    <input class="main__rand--container--input" placeholder="Введіть число" type="text" id="randNum" min="1" max="10">
+                    <button class="main__rand--container--btn" id="subRand">
+                        <svg class="main__rand--svg" id="searchIcon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="6.52174" cy="6.52174" r="5.52174" stroke="white" stroke-width="2"></circle>
+                            <path d="M14.2929 15.7071C14.6834 16.0976 15.3166 16.0976 15.7071 15.7071C16.0976 15.3166 16.0976 14.6834 15.7071 14.2929L14.2929 15.7071ZM11.468 10.0538L10.7609 9.34665L9.34666 10.7609L10.0538 11.468L11.468 10.0538ZM15.7071 14.2929L11.468 10.0538L10.0538 11.468L14.2929 15.7071L15.7071 14.2929Z" fill="white"></path>
+                        </svg>
+                    </button>
+                    <p class="main__rand--container--p" id="randRes"></p>
+                </div>
+                
             </div>
-            <p id="calcRes"></p>
-        </div>
-        <hr>
-        <div class="main__time">
-            <h3 class="main__block--title">Калькулятор часу</h3>
-            
-        </div>
-        <hr>
-        <div class="main__max">
-            <h3 class="main__block--title">Найбільше число (з 3)</h3>
-            <input type="number" id="numA" placeholder="Число 1">
-            <input type="number" id="numB" placeholder="Число 2">
-            <input type="number" id="numC" placeholder="Число 3">
-            <button id="findMax">Знайти найбільше</button>
-            <p id="maxRes"></p>
-        </div>
+            <hr>
+            <div class="main__rps">
+                <h3 class="main__block--title">Камінь - Ножиці - Папір</h3>
+                <button class="selectBtn" data-choice="Камінь">Камінь</button>
+                <button class="selectBtn" data-choice="Ножиці">Ножиці</button>
+                <button class="selectBtn" data-choice="Папір">Папір</button>
+                <p id="rpsRes"></p>
+            </div>
+            <hr>
+            <div class="main__calc">
+                <h3 class="main__block--title">Калькулятор</h3>
+                <input class="input" type="text" id="num1" placeholder="Число 1">
+                <input class="input" type="text" id="num2" placeholder="Число 2">
+                <div>
+                    <button class="calc-button" data-operation="+">+</button>
+                    <button class="calc-button" data-operation="-">-</button>
+                    <button class="calc-button" data-operation="*">*</button>
+                    <button class="calc-button" data-operation="/">/</button>
+                    <button id="equals">=</button>
+                </div>
+                <p id="calcRes"></p>
+            </div>
+            <hr>
+            <div class="main__time">
+                <h3 class="main__block--title">Калькулятор часу</h3>
+                
+            </div>
+            <hr>
+            <div class="main__max">
+                <h3 class="main__block--title">Найбільше число (з 3)</h3>
+                <input class="input" type="text" id="numA" placeholder="Число 1">
+                <input class="input" type="text" id="numB" placeholder="Число 2">
+                <input class="input" type="text" id="numC" placeholder="Число 3">
+                <button id="findMax">Знайти найбільше</button>
+                <p id="maxRes"></p>
+            </div>
+        </section>
     </main>
+    <footer>
+        <section class="footer__section">
+            <div class="footer__section--logo">      
+                <img id="logo" src="./images/logo.png" alt="header-logo">
+            </div>
+            <div class="footer__section--text">
+                <p class="footer__section--text--content">Тел: +38 (123) 456 78 90
+                    E-Mail: codingmagic@gmail.com
+                    Facebook: CodingMagic
+                    Twitter: CodingMagic
+                    Instagram: CodingMagic</p>
+            </div>
+            <div class="footer__section--btn">
+                <div class='footer__section--btn--container'>
+                    <div class="footer__section--btn--container--buttons">
+                        <input class="footer__section--btn--container--btns--btn" id="footerInput" type="email" placeholder="Ваша ел. адреса..." required>
+                        <button class="footer__section--btn--container--btns--btnSub" id="footerBtn">Підписатись</button>
+                    </div>
+                    <p class="footer__section--btn--container--text">*Підписавшись, Ви зможете ортимувати інформаццію про новинки на сайті</p>
+                </div>
+            </div>
+        </section> 
+     </footer>
     <script src="script.js"></script>
 </body>
 </html>
