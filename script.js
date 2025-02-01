@@ -36,26 +36,46 @@ document.addEventListener("DOMContentLoaded", () => {
     let randNum = Math.floor(Math.random() * 10) + 1;
     document.getElementById("subRand").addEventListener("click", () => {
         const random = parseInt(document.getElementById("randNum").value);
-        const result = random === randNum ? `Вітаю, ви вгадали число! (${randNum})` : `Ви програли, комп’ютер загадав ( ${randNum})`;
-        document.getElementById("randRes").textContent = result;
-        if (random !== randNum) randNum = Math.floor(Math.random() * 10) + 1;
+        const resultElement = document.getElementById("randRes");
+    
+        if (random === randNum) {
+            resultElement.textContent = `Вітаю, ви вгадали число! (${randNum})`;
+            resultElement.style.color = "green";
+        } else {
+            resultElement.textContent = `Ви програли, комп’ютер загадав (${randNum})`;
+            resultElement.style.color = "red";
+            randNum = Math.floor(Math.random() * 10) + 1;
+        }
     });
+    
 
     document.querySelectorAll(".selectBtn").forEach((button) => {
         button.addEventListener("click", () => {
             const playerChoice = button.dataset.choice;
             const choices = ["Камінь", "Ножиці", "Папір"];
             const computerChoice = choices[Math.floor(Math.random() * 3)];
-            const result =
-                playerChoice === computerChoice
-                    ? "Нічия!"
-                    : (playerChoice === "Камінь" && computerChoice === "Ножиці") ||
-                      (playerChoice === "Ножиці" && computerChoice === "Папір") ||
-                      (playerChoice === "Папір" && computerChoice === "Камінь")
-                    ? "Ти виграв!"
-                    : "Комп'ютер виграв!";
+            let result;
+            let color;
+    
+            if (playerChoice === computerChoice) {
+                result = "Нічия!";
+                color = "black";
+            } else if (
+                (playerChoice === "Камінь" && computerChoice === "Ножиці") ||
+                (playerChoice === "Ножиці" && computerChoice === "Папір") ||
+                (playerChoice === "Папір" && computerChoice === "Камінь")
+            ) {
+                result = "Ти виграв!";
+                color = "green";
+            } else {
+                result = "Комп'ютер виграв!";
+                color = "red";
+            }
+    
+            const resultElement = document.getElementById("rpsRes");
             document.getElementById("rpsResId").textContent = `Ти - ${playerChoice} Комп'ютер - ${computerChoice}`;
-            document.getElementById("rpsRes").textContent = `${result}`;
+            resultElement.textContent = result;
+            resultElement.style.color = color;
         });
     });
 
