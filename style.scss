@@ -8,7 +8,6 @@
 body{
     display: flex;
     flex-direction: column;
-    align-items: center;
 }
 hr{
     width: 100%;
@@ -206,6 +205,7 @@ hr{
         font-family: Montserrat Alternates;
         font-size: 24px;
         font-weight: 400;
+        margin-top: 36px;
     }
 
     &__bYear, &__rand, &__rps, &__calc, &__time, &__max, &__bYear{
@@ -278,15 +278,14 @@ hr{
         &--container{
             display: flex;
             align-items: center;
-            font-family: Montserrat Alternates;
             font-size: 12px;
 
             &--btn{
-                height: 42.5px;
                 padding: 10px;
                 border-radius: 0px 20px 20px 0px;
                 background-color: #000000;
                 box-shadow: 3px 3px 0px 0px #00000040;
+                height: 42px;
             }
 
             &--svg{
@@ -296,7 +295,7 @@ hr{
 
             &--input{
                 width: 150px;
-                height: 42.5px;
+                height: 42px;
                 border-top-left-radius: 20px;
                 border-bottom-left-radius: 20px;
                 opacity: 0px;
@@ -309,6 +308,131 @@ hr{
             &--p{
                 margin-left: 35px;
             }
+        }
+    }
+
+    &__rps{
+
+        &--content{
+            display: flex;
+            justify-content: space-between;
+
+            &--btn{
+                width: 60px;
+                height: 60px;
+                padding: 5px;
+                border-radius: 20px;
+                background: #000000;
+                margin-left: 10px;
+                margin-right: 10px;
+            }
+
+            &--res, &--resID{
+                font-size: 12px;
+                line-height: 14.63px;
+            }
+
+            &--res{
+                margin-top: 36px;
+            }
+        }
+        
+    }
+
+    &__calc{
+        display: flex;
+
+        &--input{
+            width: 100%;
+            max-width: 135px;
+            height: 42px;
+            padding: 10px;
+            border-radius: 20px;
+            box-shadow: 3px 3px 0px 0px #00000040;
+            background: #D7D7D7;
+            border: none;
+            margin: 20px;
+        }
+
+        &--inputRes{
+            width: 100%;
+            max-width: 118px;
+            height: 42px;
+            padding: 10px;
+            gap: 10px;
+            border-radius: 20px;
+            background: #D7D7D7;
+            border: none;
+            margin: 20px;
+        }
+
+        &--container{
+            display: flex;
+            flex-direction: row;
+        }
+
+        &--btns{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        &--button, &--button--eq{
+            width: 25px;
+            height: 25px;
+            padding: 5px;
+            gap: 10px;
+            border-radius: 20px;
+            opacity: 0px;
+            box-shadow: 3px 3px 0px 0px #00000040;
+            background-color: #000000;
+            color: #fff;
+            border: none;
+        }
+
+        &--button--eq{
+            margin-top: 27.5px;
+        }
+    }
+
+    &__max{
+
+        &--numbers{
+            display: flex;
+            justify-content: space-between;
+            width: 481px;
+            margin-bottom: 20px;
+
+            &--input{
+                width: 135px;
+                height: 42px;
+                padding: 10px;
+                gap: 10px;
+                border-radius: 20px;
+                background: #D7D7D7;
+                box-shadow: 3px 3px 0px 0px #00000040;
+                border: none;
+            }
+        }
+
+        &--btn{
+            width: 155px;
+            height: 35px;
+            font-size: 12px;
+            gap: 10px;
+            border-radius: 20px;
+            background: #000000;
+            box-shadow: 3px 3px 0px 0px #00000040;
+            border: none;
+            color: #fff;
+            margin-bottom: 15px;
+        }
+
+        &--res{
+            font-size: 12px;
+            font-weight: 400;
+            line-height: 14.63px;
+            margin-bottom: 36px;
         }
     }
 }

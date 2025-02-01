@@ -54,12 +54,13 @@ document.addEventListener("DOMContentLoaded", () => {
                       (playerChoice === "Папір" && computerChoice === "Камінь")
                     ? "Ти виграв!"
                     : "Комп'ютер виграв!";
-            document.getElementById("rpsRes").textContent = `Ти: ${playerChoice}, Комп'ютер: ${computerChoice}. ${result}`;
+            document.getElementById("rpsResId").textContent = `Ти - ${playerChoice} Комп'ютер - ${computerChoice}`;
+            document.getElementById("rpsRes").textContent = `${result}`;
         });
     });
 
     let selectOper = null;
-    document.querySelectorAll(".calc-button").forEach((button) => {
+    document.querySelectorAll(".main__calc--button").forEach((button) => {
         button.addEventListener("click", () => {
             selectOper = button.dataset.operation;
         });
@@ -84,17 +85,16 @@ document.addEventListener("DOMContentLoaded", () => {
             default:
                 result = "Оберіть операцію";
         }
-        document.getElementById("calcRes").textContent = `Результат: ${result}`;
+        document.getElementById("res").value = result;
     });
 
-    //
 
     document.getElementById("findMax").addEventListener("click", () => {
         const numA = parseFloat(document.getElementById("numA").value);
         const numB = parseFloat(document.getElementById("numB").value);
         const numC = parseFloat(document.getElementById("numC").value);
         const max = Math.max(numA, numB, numC);
-        document.getElementById("maxRes").textContent = `Найбільше число: ${max}`;
+        document.getElementById("maxRes").textContent = `Найбільше число, яке ви ввели - ${max}`;
     });
 });
 
